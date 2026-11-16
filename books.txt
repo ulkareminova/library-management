@@ -1,0 +1,2 @@
+2008,Clean Code,Robert Martin,2008,TECHNOLOGY,true
+2011,Sapiens,Yuval Harari,2011,HISTORY,false

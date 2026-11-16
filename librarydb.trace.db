@@ -1,0 +1,38 @@
+2026-10-26 20:38:11.258035+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOOKS" not found (this database is empty); SQL statement:
+MERGE INTO books (id, title, author, "YEAR", category, available)
+KEY (id)
+VALUES (?, ?, ?, ?, ?, ?)
+ [42104-252]
+2026-10-30 11:53:22.429356+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOOKS" not found (this database is empty); SQL statement:
+MERGE INTO books (id, title, author, "YEAR", category, available)
+KEY (id)
+VALUES (?, ?, ?, ?, ?, ?)
+ [42104-252]
+2026-10-30 12:07:51.182338+04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "PUBLISH_YEAR" not found; SQL statement:
+MERGE INTO books (id, title, author, publish_year, category, available)
+KEY (id)
+VALUES (?, ?, ?, ?, ?, ?)
+ [42122-252]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:777)
+	at org.h2.command.Parser.parseColumn(Parser.java:1174)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1159)
+	at org.h2.command.Parser.parseMergeInto(Parser.java:1439)
+	at org.h2.command.Parser.parseMerge(Parser.java:1425)
+	at org.h2.command.Parser.parsePrepared(Parser.java:706)
+	at org.h2.command.Parser.parse(Parser.java:584)
+	at org.h2.command.Parser.parse(Parser.java:559)
+	at org.h2.command.Parser.prepareCommand(Parser.java:487)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:648)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:564)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1161)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:315)
+	at dao.JdbcBookDao.save(JdbcBookDao.java:41)
+	at DaoDemo.main(DaoDemo.java:14)
